@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(arr){
+                // 다 더해서 빼
+                // 두 원소 합이 뺀 것 
+                let answer = arr;
+                const sum = arr.reduce((cur, prev) => cur+prev);
+                const diff = sum  - 100;
+                const len = arr.length;
+                for(let i=0; i < len-1; i++){
+                    let temp = diff - arr[i];
+                    for(let j=i+1; j < len ; j++){
+                        if(temp === arr[j]){
+                            // 뒤에꺼 먼저 지워준다.
+                            answer.splice(j, 1);
+                            // 그러면 원소 인덱스에 영향 안줘서 괜찮다. 
+                            answer.splice(i, 1);
+                        }
+                    }
+                }
+                
+                return answer;
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+        </script>
+    </body>
+</html>
