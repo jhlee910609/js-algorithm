@@ -3,9 +3,6 @@ function solution(a, b) {
   let answer = "";
   for (let i = 0; i < a.length; i++) {
     if (a === b) answer += "D";
-    else if (a === 1 && b === 3) answer += "B";
-    else if (a > b) answer += "A";
-    else answer += "B";
   }
 
   return answer;
