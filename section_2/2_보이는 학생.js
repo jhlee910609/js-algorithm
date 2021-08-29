@@ -1,9 +1,13 @@
 function solution(arr) {
-  const [first] = arr;
-  const result = [first];
+  const first = arr[0];
+  // 무조건 0번째는 보인다.
+  const answer = [first];
+  // 시작점에서는 가장 큰 키이다.
   let maxHeight = first;
-  for (let i = 1; i < arr.legnth; i++) {
+
+  for (let i = 1; i < arr.length; i++) {
     if (arr[i] > maxHeight) {
+      answer.push(arr[i]);
       maxHeight = arr[i];
     }
   }
