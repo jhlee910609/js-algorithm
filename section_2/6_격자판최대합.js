@@ -14,7 +14,6 @@ function solution(arr) {
     garoSum = 0;
     seroSum = 0;
   }
-  console.log(answer);
   return answer;
 }
 
