@@ -1,5 +1,5 @@
 // 1 가위 2 바위 3 보
-// brut
+//  brute force
 function solution(a, b) {
   let answer = "";
   for (let i = 0; i < a.length; i++) {
