@@ -4,6 +4,7 @@ function solution(arr) {
   for (const score of arr) {
     if (score === 1) {
       cnt++;
+      answer += cnt;
     } else {
       cnt = 0;
     }
