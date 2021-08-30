@@ -3,17 +3,20 @@ function solution(arr) {
   // 가로 합
   let garoSum = 0;
   let seroSum = 0;
+  let dagax1 = 0;
+  let dagax2 = 0;
   for (let i = 0; i < arr.length; i++) {
-    garoSum = 0;
-    seroSum = 0;
     for (let j = 0; j < arr[i].length; j++) {
       garoSum += arr[i][j];
       seroSum += arr[j][i];
+      if (i === j) {
+        dagax1 += arr[i][j];
+        dagax2 += arr[j][i];
+      }
     }
-    answer = Math.max(garoSum, seroSum);
-    garoSum = 0;
-    seroSum = 0;
+    answer = Math.max(garoSum, seroSum, dagax1, dagax2);
   }
+
   return answer;
 }
 
