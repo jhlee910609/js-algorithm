@@ -1,15 +1,20 @@
 function solution(arr) {
   let answer = Number.MIN_SAFE_INTEGER;
   // 가로 합
-  let sum = 0;
+  let garoSum = 0;
+  let seroSum = 0;
   for (let i = 0; i < arr.length; i++) {
-    sum = 0;
+    garoSum = 0;
+    seroSum = 0;
     for (let j = 0; j < arr[i].length; j++) {
-      sum += arr[i][j];
+      garoSum += arr[i][j];
+      seroSum += arr[j][i];
     }
-    answer = sum > answer ? sum : answer;
-    sum = 0;
+    answer = Math.max(garoSum, seroSum);
+    garoSum = 0;
+    seroSum = 0;
   }
+  console.log(answer);
   return answer;
 }
 
