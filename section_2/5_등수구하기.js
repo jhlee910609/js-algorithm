@@ -5,7 +5,7 @@ function solution(arr) {
   for (let i = 0; i < len; i++) {
     answer[i] = 1;
 
-    for (let j = i; j < len; j++) {
+    for (let j = 0; j < len; j++) {
       if (arr[j] > arr[i]) {
         answer[i]++;
       }
@@ -14,5 +14,5 @@ function solution(arr) {
   return answer;
 }
 
-let arr = [87, 89, 92, 100, 76];
+let arr = [87, 89, 100, 100, 76];
 console.log(solution(arr));
