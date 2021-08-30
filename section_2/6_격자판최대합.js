@@ -1,9 +1,14 @@
 function solution(arr) {
   let answer = Number.MIN_SAFE_INTEGER;
+  // 가로 합
+  let sum = 0;
   for (let i = 0; i < arr.length; i++) {
+    sum = 0;
     for (let j = 0; j < arr[i].length; j++) {
-      console.log(arr[i][j]);
+      sum += arr[i][j];
     }
+    answer = sum > answer ? sum : answer;
+    sum = 0;
   }
   return answer;
 }
