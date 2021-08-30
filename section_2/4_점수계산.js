@@ -1,6 +1,13 @@
 function solution(arr) {
   let answer = 0,
     cnt = 0;
+  for (const score of arr) {
+    if (score === 1) {
+      cnt++;
+    } else {
+      cnt = 0;
+    }
+  }
   return answer;
 }
 
