@@ -10,10 +10,12 @@ function solution(arr) {
         const nx = i + dx[k];
         const ny = j + dy[k];
         let flag = true;
-        if (arr[i][j] < arr[nx][ny] && nx >= 0 && nx < n && ny >= 0 && ny < n) {
+        if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[i][j] < arr[nx][ny]) {
           flag = false;
           break;
         }
+
+        if (flag) answer++;
       }
     }
   }
