@@ -1,5 +1,14 @@
 function solution(arr) {
   let answer = 0;
+  let n = arr.length;
+  const dx = [-1, 0, 1, 0];
+  const dy = [0, -1, 0, 1];
+
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      console.log(arr[i][j]);
+    }
+  }
 
   return answer;
 }
