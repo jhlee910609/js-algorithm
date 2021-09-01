@@ -9,7 +9,8 @@ function solution(arr) {
       for (let k = 0; k < 4; k++) {
         const nx = i + dx[k];
         const ny = j + dy[k];
-        if (arr[i][j]) {
+        let flag = true;
+        if (arr[i][j] < arr[nx][ny] && nx >= 0 && nx < n && ny >= 0 && ny < n) {
         }
       }
     }
