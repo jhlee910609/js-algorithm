@@ -6,19 +6,18 @@ function solution(arr) {
 
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      for (let k = 0; k < 4; k++) {
-        let flag = true;
+      let flag = true;
 
+      for (let k = 0; k < 4; k++) {
         const nx = i + dx[k];
         const ny = j + dy[k];
+
         if (nx >= 0 && nx < n && ny >= 0 && ny < n && arr[i][j] < arr[nx][ny]) {
           flag = false;
           break;
         }
-
-        if (flag) answer++;
-        console.log(flag);
       }
+      if (flag) answer++;
     }
   }
 
