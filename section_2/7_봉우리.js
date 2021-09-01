@@ -11,6 +11,8 @@ function solution(arr) {
         const ny = j + dy[k];
         let flag = true;
         if (arr[i][j] < arr[nx][ny] && nx >= 0 && nx < n && ny >= 0 && ny < n) {
+          flag = false;
+          break;
         }
       }
     }
