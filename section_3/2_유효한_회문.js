@@ -1,7 +1,10 @@
 function solution(input) {
   let answer = "YES";
-  input = input.replace("/[^a-zA-Z]/g", "");
-  console.log(input);
+  input = input.replace(/[^a-zA-Z]/g, "");
+  l;
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] !== input[i - 1 - length]) return "NO";
+  }
 
   return answer;
 }
