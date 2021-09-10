@@ -6,9 +6,14 @@
 
 function solution(word) {
   let answer;
+  let cur;
   for (const s of word) {
+    if (s === cur) {
+    }
     console.log(s);
   }
 
   return answer;
 }
+
+console.log(solution("KKHSSSSSSSE") === "K2HS7E");
