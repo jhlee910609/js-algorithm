@@ -5,15 +5,26 @@
  **/
 
 function solution(word) {
-  let answer;
-  let cur;
-  for (const s of word) {
-    if (s === cur) {
+  let answer = "";
+  let count = 0;
+
+  for (let i = 0; i < word.length; i++) {
+    // 같으면 숫자 더함
+    if (answer[answer.length - 1] === word[i]) {
+      count++;
+    } else {
+      // 다르면
+      if (count > 1) {
+        answer += count.toString();
+      }
+      count = 1;
+      answer += word[i];
     }
-    console.log(s);
   }
 
   return answer;
 }
 
-console.log(solution("KKHSSSSSSSE") === "K2HS7E");
+const result = solution("KKHSSSSSSSE");
+console.log(result);
+console.log(result === "K2HS7E");
