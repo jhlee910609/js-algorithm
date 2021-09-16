@@ -1,5 +1,5 @@
 // 각 자리수의 합
-function solution(input) {
+function mySolution(input) {
   let answer = -1;
   const numbs = input.split(" ");
 
@@ -21,4 +21,4 @@ function solution(input) {
   return numbs[answerIdx];
 }
 
-console.log(solution("128 460 603 40 521 137 123") == 137);
+console.log(mySolution("128 460 603 40 521 137 123") == 137);
