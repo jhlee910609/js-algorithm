@@ -17,8 +17,8 @@ function mySolution(input) {
 }
 
 function solution(input) {
-  // TODO: 소수를 판별하는 가장 빠른 방법 익히기
-  // TODO: 원리도
+  // TODO: 소수를 판별하는 가장 빠른 방법 익히기 (에라토스테네스의 접근)
+  // TODO: https://jongmin92.github.io/2017/11/05/Algorithm/Concept/prime/
   const isPrime = (num) => {
     for (let i = 2; i < Math.sqrt(num); i++) {
       if (num % i === 0) return false;
