@@ -1,6 +1,4 @@
 // 각 자리수의 합
-//
-//
 function solution(input) {
   let answer = -1;
   const numbs = input.split(" ");
