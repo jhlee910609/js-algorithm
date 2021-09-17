@@ -16,12 +16,12 @@ function solution(inputArray) {
           if (inputArray[k][l] === j) {
             pj = l;
           }
-          if (pi < pj) {
-            cnt++;
-          }
         }
-        if (cnt === M) answer++;
+        if (pi < pj) {
+          cnt++;
+        }
       }
+      if (cnt === M) answer++;
     }
   }
   return answer;
