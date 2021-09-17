@@ -1,6 +1,7 @@
 function solution(input) {
   let answer = [];
   let i = 0;
+  let res = [];
   while (i < input.length) {
     for (let j = 0; i < input[i].length; j++) {}
     i++;
