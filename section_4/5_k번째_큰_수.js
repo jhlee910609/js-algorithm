@@ -1,5 +1,6 @@
 function solution(cards, k) {
   let answer;
+  if (k === 1) return answer;
   return answer;
 }
 
