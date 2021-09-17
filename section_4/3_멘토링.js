@@ -7,8 +7,8 @@ function solution(inputArray) {
     for (let j = 1; j <= N; j++) {
       let cnt = 0;
       for (let k = 0; k < M; k++) {
+        let pi = (pj = 0);
         for (let l = 0; l < N; l++) {
-          let pi = (pj = 0);
           if (inputArray[k][l] === i) {
             pi = l;
           }
@@ -17,7 +17,6 @@ function solution(inputArray) {
             pj = l;
           }
           if (pi < pj) {
-            console.log(pi, pj);
             cnt++;
           }
         }
