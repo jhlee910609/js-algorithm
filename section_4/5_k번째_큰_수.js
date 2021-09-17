@@ -38,11 +38,13 @@ function solution(_cards, _k) {
 // 무조건 3장 뽑는다고 했으니, 위와 같이 고려할 필요 없는 문제
 function solution2(input, k) {
   const sums = new Set();
-  for (let i = 0; i < input.length - 2; i++) {
-    for (let j = i + 1; i < input.length - 1; j++) {
-      for (let l = j + 1; l < input.length; l++) {
+  const len = input.length;
+  for (let i = 0; i < len - 2; i++) {
+    for (let j = i + 1; i < len - 1; j++) {
+      for (let l = j + 1; l < len; l++) {
         sums.add(input[i] + input[j] + input[l]);
       }
+      console.log(j);
     }
   }
   return Array.from([...sums]).sort((a, b) => b - a)[k - 1];
