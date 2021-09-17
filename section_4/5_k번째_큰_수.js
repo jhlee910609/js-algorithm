@@ -11,8 +11,8 @@ function solution(_cards, _k) {
     cards.forEach((card, i, origin) => {
       const rest = origin.slice(i + 1);
       const combinations = getAllCombination(rest, k - 1);
-      console.log(combinations);
       const attach = combinations.map((com) => [card, ...com]);
+      console.log(combinations, attach);
       result.push(...attach);
     });
     return result;
