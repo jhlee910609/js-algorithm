@@ -5,13 +5,13 @@ function solution(_cards, _k) {
     let result = [];
 
     if (k === 1) {
-      console.log(cards);
       return cards.map((card) => [card]);
     }
 
     cards.forEach((card, i, origin) => {
       const rest = origin.slice(i + 1);
       const combinations = getAllCombination(rest, k - 1);
+      console.log(combinations);
       const attach = combinations.map((com) => [card, ...com]);
       result.push(...attach);
     });
