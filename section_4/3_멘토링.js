@@ -8,10 +8,11 @@ function solution(test) {
       for (let k = 0; k < m; k++) {
         let pi = (pj = 0);
         for (let s = 0; s < n; s++) {
-          console.log(test[k][s], i, j);
+          console.log(test[k][s]);
           if (test[k][s] === i) pi = s;
           if (test[k][s] === j) pj = s;
         }
+        console.log(pi, pj);
         if (pi < pj) cnt++;
       }
       if (cnt === m) answer++;
