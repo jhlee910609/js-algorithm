@@ -1,8 +1,11 @@
 function solution(input) {
   let answer = [];
-  for (const res of input) {
-    console.log(res);
+  let i = 0;
+  while (i < input.length) {
+    for (let j = 0; i < input[i].length; j++) {}
+    i++;
   }
+
   return answer;
 }
 
