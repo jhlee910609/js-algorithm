@@ -1,5 +1,6 @@
 function solution(_cards, _k) {
   // 조합 코딩으로 구현하는 방법
+  // 조합 코딩 연습
   // 재귀활용
   const getAllCombination = (cards, k) => {
     let result = [];
@@ -34,4 +35,18 @@ function solution(_cards, _k) {
   return totals[answer];
 }
 
+// 무조건 3장 뽑는다고 했으니, 위와 같이 고려할 필요 없는 문제
+function solution2(input, k) {
+  const sums = new Set();
+  for (let i = 0; i < input.length - 2; i++) {
+    for (let j = i + 1; i < input.length - 1; j++) {
+      for (let l = j + 1; l < input.length; l++) {
+        sums.add(input[i] + input[j] + input[l]);
+      }
+    }
+  }
+  return Array.from([...sums]).sort((a, b) => b - a)[k - 1];
+}
+
 console.log(solution([13, 15, 34, 23, 45, 65, 33, 11, 26, 42], 3));
+console.log(solution2([13, 15, 34, 23, 45, 65, 33, 11, 26, 42], 3));
