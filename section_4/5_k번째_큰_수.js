@@ -12,7 +12,6 @@ function solution(_cards, _k) {
       const rest = origin.slice(i + 1);
       const combinations = getAllCombination(rest, k - 1);
       const attach = combinations.map((com) => [card, ...com]);
-      console.log(combinations, attach);
       result.push(...attach);
     });
     return result;
