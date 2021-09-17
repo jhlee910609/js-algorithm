@@ -40,7 +40,7 @@ function solution2(input, k) {
   const sums = new Set();
   const len = input.length;
   for (let i = 0; i < len - 2; i++) {
-    for (let j = i + 1; i < len - 1; j++) {
+    for (let j = i + 1; j < len - 1; j++) {
       for (let l = j + 1; l < len; l++) {
         sums.add(input[i] + input[j] + input[l]);
       }
