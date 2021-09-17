@@ -1,5 +1,8 @@
 function solution(inputArray) {
   let answer = 0;
+  const M = inputArray.length;
+  const N = inputArray[0].length;
+  console.log(M, N);
   return answer;
 }
 
