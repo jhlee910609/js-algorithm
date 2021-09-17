@@ -1,10 +1,10 @@
 function solution(input) {
   let answer = [];
-  let i = 0;
-  let res = [];
-  while (i < input.length) {
-    for (let j = 0; i < input[i].length; j++) {}
-    i++;
+  for (let i = 0; i < input.length - 1; i++) {
+    for (let j = 0; j < input[i].length; j++) {
+      const student = input[i][j];
+      console.log("student >", student);
+    }
   }
 
   return answer;
