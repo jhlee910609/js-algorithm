@@ -36,6 +36,7 @@ function solution(_cards, _k) {
 }
 
 // 무조건 3장 뽑는다고 했으니, 위와 같이 고려할 필요 없는 문제
+//
 function solution2(input, k) {
   const sums = new Set();
   const len = input.length;
