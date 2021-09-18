@@ -3,9 +3,14 @@
 // 5
 // 23679
 function solution(a, b) {
-  let i = (j = 0);
   const answer = [];
-  while (a.length > 0 || b.length > 0) {}
+  while (a.length > 0 || b.length > 0) {
+    if (a[0] > b[0]) {
+      answer.push(a.shift());
+    } else {
+      answer.push(b.shift());
+    }
+  }
 
   return answer;
 }
