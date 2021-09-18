@@ -4,14 +4,16 @@
 // 23679
 function solution(a, b) {
   const answer = [];
-  while (a.length > 0 || b.length > 0) {
-    if (a[0] > b[0]) {
-      answer.push(a.shift());
+  let i = (j = 0);
+  while (i < a.length || j < b.length) {
+    if (a[i] < b[j]) {
+      answer.push(a[i]);
+      i++;
     } else {
-      answer.push(b.shift());
+      answer.push(b[j]);
+      j++;
     }
   }
-
   return answer;
 }
 
