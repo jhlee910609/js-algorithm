@@ -1,7 +1,8 @@
 function solution(a) {
-  a = a + "";
+  a = a + ""; //  메모리 사용 x
   let pointer = a.length % 3;
   let str = a.substring(0, pointer);
+
   while (pointer < a.length) {
     if (str !== "") str += ",";
     str += a.substring(pointer, pointer + 3);
