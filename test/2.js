@@ -9,7 +9,11 @@ function solution(input) {
       temp += 5;
     }
 
-    console.log(temp - input[i]);
+    if (input[i] > 38 && temp - input[i] < 3) {
+      answer.push(temp);
+    } else {
+      answer.push(input[i]);
+    }
   }
   return answer;
 }
