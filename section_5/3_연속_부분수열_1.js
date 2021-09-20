@@ -21,11 +21,18 @@ function solution(input, M) {
 function solution2(input, M) {
   let answer = 0;
   let sum = 0;
-  let end = 0;
-  for (let start = 0; start < input.length; start++) {
-    sum += input[start];
-    while (end < input.length) {}
+  let start = 0;
+  for (let end = 0; end < input.length; end++) {
+    sum += input[end];
+    if (sum === M) answer++;
+
+    while (sum >= M) {
+      sum -= input[start++];
+      if (sum === M) answer++;
+    }
   }
+
+  return answer;
 }
 
-console.log(solution([1, 2, 1, 3, 1, 1, 1, 2], 6));
+console.log(solution2([1, 2, 1, 3, 1, 1, 1, 2], 6));
