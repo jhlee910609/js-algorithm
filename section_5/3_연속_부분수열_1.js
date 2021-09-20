@@ -18,6 +18,7 @@ function solution(input, M) {
 }
 
 // Two Pointers Algorithm
+// 무엇이 끝까지 돌아야 하나 => end
 function solution2(input, M) {
   let answer = 0;
   let sum = 0;
