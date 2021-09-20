@@ -25,4 +25,4 @@ function solution2(input, M) {
   return answer;
 }
 
-console.log(solution([1, 2, 1, 3, 1, 1, 1, 2], 5));
+console.log(solution([1, 2, 1, 3, 1, 1, 1, 2], 6));
