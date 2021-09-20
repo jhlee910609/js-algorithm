@@ -1,7 +1,4 @@
-// 3
-// 135
-// 5
-// 23679
+// Two pointers algorithm
 function solution(a, b) {
   const answer = [];
   let i = (j = 0);

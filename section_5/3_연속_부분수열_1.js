@@ -1,3 +1,4 @@
+// 기본 풀이
 function solution(input, M) {
   let answer = 0;
   for (let i = 0; i < input.length; i++) {
@@ -13,6 +14,14 @@ function solution(input, M) {
       }
     }
   }
+  return answer;
+}
+
+// Two Pointers Algorithm
+function solution2(input, M) {
+  let answer = 0;
+  let sum = 0;
+
   return answer;
 }
 
