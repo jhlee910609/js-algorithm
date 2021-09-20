@@ -4,7 +4,7 @@ function solution(a, b) {
   const n = a.length;
   const m = b.length;
   let i = (j = 0);
-  while (i < n || j < m) {
+  while (i < n && j < m) {
     if (a[i] <= b[j]) {
       answer.push(a[i++]);
     } else {
