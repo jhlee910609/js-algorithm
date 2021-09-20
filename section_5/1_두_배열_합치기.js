@@ -1,16 +1,18 @@
 // Two pointers algorithm
 function solution(a, b) {
   const answer = [];
+  const n = a.length;
+  const m = b.length;
   let i = (j = 0);
-  while (i < a.length || j < b.length) {
-    if (a[i] < b[j]) {
-      answer.push(a[i]);
-      i++;
+  while (i < n || j < m) {
+    if (a[i] <= b[j]) {
+      answer.push(a[i++]);
     } else {
-      answer.push(b[j]);
-      j++;
+      answer.push(b[j++]);
     }
   }
+  while (i < a.length) answer.push(a[i++]);
+  while (j < b.length) answer.push(b[j++]);
   return answer;
 }
 
