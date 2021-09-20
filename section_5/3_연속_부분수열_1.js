@@ -21,8 +21,10 @@ function solution(input, M) {
 function solution2(input, M) {
   let answer = 0;
   let sum = 0;
-
-  return answer;
+  let start = (end = 0);
+  while (start < input.length && end < input.length) {
+    sum;
+  }
 }
 
 console.log(solution([1, 2, 1, 3, 1, 1, 1, 2], 6));
