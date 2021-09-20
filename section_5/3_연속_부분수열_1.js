@@ -21,9 +21,10 @@ function solution(input, M) {
 function solution2(input, M) {
   let answer = 0;
   let sum = 0;
-  let start = (end = 0);
-  while (start < input.length && end < input.length) {
-    sum;
+  let end = 0;
+  for (let start = 0; start < input.length; start++) {
+    sum += input[start];
+    while (end < input.length) {}
   }
 }
 
