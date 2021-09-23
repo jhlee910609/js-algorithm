@@ -1,21 +1,20 @@
 function solution(a, b) {
   const aMap = new Map();
-  const bMap = new Map();
+  let answer = "YES";
 
-  for (let i = 0; i < a.length; i++) {
-    const aTemp = aMap.get(a[i]) || 0;
-    aMap.set(a[i], aTemp + 1);
-
-    const bTemp = bMap.get(b[i]) || 0;
-    bMap.set(b[i], bTemp + 1);
+  for (let x of a) {
+    const aTemp = aMap.get(x) || 0;
+    aMap.set(x, aTemp + 1);
   }
 
-  for (let [k, v] of aMap) {
-    if (v !== bMap.get(k)) {
+  for (let x of b) {
+    if (!aMap.has(x) || aMap.get(x) === 0) {
       return "NO";
     }
+
+    aMap.set(x, aMap.get(x) - 1);
   }
-  return "YES";
+  return answer;
 }
 
 console.log(solution("AbaAeCe", "baeeACA") === "YES");
