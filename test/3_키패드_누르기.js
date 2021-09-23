@@ -1,6 +1,6 @@
 // https://programmers.co.kr/learn/courses/30/lessons/67256
 // 이 문제는 거리구하는 방법이 핵심인데
-// 미리 좌표를 지정해두고, 계산해서 사용하는 방법이 가장 수월할듯하다
+// 미리 좌표를 지정해두고, 계산해서 사용하는 방법이 가장 수월할듯하다w
 function solution(numbers, hand) {
   let answer = "";
   let cl = "*";
