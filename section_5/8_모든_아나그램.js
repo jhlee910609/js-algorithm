@@ -4,6 +4,11 @@ function solution(S, T) {
   const tMap = new Map();
   const sMap = new Map();
 
+  const compareMap = (aMap, bMap) => {
+      if(aMap.size !== bMap) return false;
+
+  }
+
   // 1. tMap을 만든다.
   for (let t of T) {
     tMap.set(t, (tMap.get(t) || 0) + 1);
@@ -17,6 +22,7 @@ function solution(S, T) {
   let lt = 0;
   for (let rt = len; i < S.length; i++) {
     sMap.set(S[rt], (sMap.get(S[rt]) || 0) + 1);
+    if(compareMap()
   }
   return answer;
 }
