@@ -1,15 +1,16 @@
 function solution(input) {
   const map = new Map();
-  input.split("").forEach((ele) => {
-    const prev = map.get(ele) || 0;
-    map.set(ele, prev + 1);
-  });
   let answer;
-  let prev = 0;
-  for (const [k, v] of map) {
-    if (v > prev) {
-      prev = v;
+  for (let k of input) {
+    const prev = map.get(k) || 0;
+    map.set(k, prev + 1);
+  }
+
+  let max = -1;
+  for (let [k, v] of map) {
+    if (v > max) {
       answer = k;
+      max = v;
     }
   }
   return answer;
