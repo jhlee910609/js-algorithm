@@ -5,9 +5,14 @@ function solution(input) {
     map.set(ele, prev + 1);
   });
   let answer;
+  let prev = 0;
   for (const [k, v] of map) {
-    console.log(k, v);
+    if (v > prev) {
+      prev = v;
+      answer = k;
+    }
   }
+  return answer;
 }
 
 console.log(solution("BACBACCACCBDEDE"));
