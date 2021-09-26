@@ -5,6 +5,8 @@ function solution(input) {
   for (let c of input) {
     if (c === "(") stack.push(c);
     else {
+      // ) 인데 stack에 (가 없는 경우
+      if (stack.length === 0) return "NO";
       stack.pop();
     }
   }
@@ -15,3 +17,4 @@ function solution(input) {
 
 console.log(solution("(()(()))(()") === "NO");
 console.log(solution("(())") === "YES");
+console.log(solution("())") === "NO");
