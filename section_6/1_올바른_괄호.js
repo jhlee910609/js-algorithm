@@ -2,7 +2,15 @@ function solution(input) {
   let answer = "YES";
   const stack = [];
   for (let c of input) {
-    console.log(c);
+    if (c === "(") {
+      stack.push(c);
+    } else {
+      const c = stack.shift();
+      console.log(c, stack);
+      if (c !== "(") {
+        return "NO";
+      }
+    }
   }
   return answer;
 }
