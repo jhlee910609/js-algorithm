@@ -9,9 +9,14 @@ function solution(board, moves) {
     console.log("x ===", x);
     for (let i = 0; i < len; i++) {
       const doll = board[i][x - 1];
-      console.log(doll);
+      if (doll !== 0) {
+        stack.push(doll);
+        board[i][x - 1] = 0;
+        continue loop;
+      }
     }
   }
+  console.log(stack);
   return answer;
 }
 
