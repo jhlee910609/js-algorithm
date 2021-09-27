@@ -3,9 +3,13 @@ function solution(board, moves) {
   let answer = 0;
   const stack = [];
   for (const x of moves) {
-    console.log("x", x);
-    for (let i = board.length - 1; i >= 0; i--) {
-      console.log(board[i][x - 1]);
+    console.log("x ====> ", x);
+    for (let i = 0; i < board.length; i++) {
+      const doll = board[i][x - 1];
+      if (doll !== 0) {
+        stack.push(doll);
+        board[i][x - 1] = 0;
+      }
     }
   }
   return answer;
