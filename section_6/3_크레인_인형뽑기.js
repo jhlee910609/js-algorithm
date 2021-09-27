@@ -1,8 +1,12 @@
 function solution(board, moves) {
+  console.log(board);
   let answer = 0;
   const stack = [];
   for (const x of moves) {
     console.log("x", x);
+    for (let i = board.length - 1; i >= 0; i--) {
+      console.log(board[i][x - 1]);
+    }
   }
   return answer;
 }
