@@ -1,5 +1,9 @@
 function solution(board, moves) {
   let answer = 0;
+  const stack = [];
+  for (const x of moves) {
+    console.log("x", x);
+  }
   return answer;
 }
 
