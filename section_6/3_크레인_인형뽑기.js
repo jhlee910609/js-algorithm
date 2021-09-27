@@ -1,15 +1,21 @@
 function solution(board, moves) {
-  console.log(board);
-  let answer = 0;
-  const stack = [];
+  let answer = 0; // 개수
+  const stack = []; // 스택
+
+  // 크레인 움직인다.
   for (const x of moves) {
-    console.log("x ====> ", x);
-    for (let i = 0; i < board.length; i++) {
-      const doll = board[i][x - 1];
-      if (doll !== 0) {
-        stack.push(doll);
-        board[i][x - 1] = 0;
+    // 보드 계속 돈다
+    console.log("x ==== ", x);
+    let cur = 0;
+    while (board[cur][x - 1] === 0 && cur < board[0].length) {
+      if (board[cur][x - 1] === stack[stack.length - 1]) {
+        stack.pop();
+        answer++;
+      } else {
+        stack.push(board[cur][x - 1]);
       }
+      board[cur][x - 1] = 0;
+      cur++;
     }
   }
   return answer;
