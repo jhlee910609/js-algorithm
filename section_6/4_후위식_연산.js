@@ -4,6 +4,24 @@ function solution(input) {
   for (const x of input) {
     if (!isNaN(x)) {
       stack.push(x);
+    } else {
+      let temp;
+      if (x === "+") {
+        temp = stack.pop() + stack.pop();
+      }
+
+      if (x === "-") {
+        temp = stack.pop() - stack.pop();
+      }
+
+      if (x === "*") {
+        temp = stack.pop() * stack.pop();
+      }
+
+      if (x === "/") {
+        temp = stack.pop() / stack.pop();
+      }
+      stack.push(temp);
     }
   }
 
