@@ -12,6 +12,7 @@ function solution(input) {
         ans++;
       }
     }
+    console.log(ans);
   }
 
   return ans;
