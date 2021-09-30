@@ -9,6 +9,7 @@ function solution(input) {
       if (input[i - 1] === "(") {
         ans += stack.length;
       } else {
+        ans++;
       }
     }
   }
