@@ -1,7 +1,9 @@
 // 선택정렬로 풀기
 function solution(input) {
   for (let i = 0; i < input.length; i++) {
+    // 최소 idx
     let min = i;
+
     for (let j = i; j < input.length; j++) {
       if (input[min] > input[j]) min = j;
     }
