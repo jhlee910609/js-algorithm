@@ -1,15 +1,27 @@
 function solution(S, tasks) {
-  const cache = Array.from({ length: S });
-  console.log("cache", cache);
+  const cache = [];
 
-  tasks.forEac((task, i) => {
+  tasks.forEach((task) => {
     console.log("task", task);
-    if (cache.includes(task)) {
-      for (let i = 1; i < tasks.length - 1; i++) {}
+    const targetIdx = cache.findIndex((x) => task === x);
+    console.log("targetIdx", targetIdx);
+
+    if (targetIdx !== -1) {
+      const temp = cache[targetIdx];
+
+      for (let j = 0; j < targetIdx; j++) {
+        cache[j + 1] = cache[j];
+      }
+
+      cache[0] = temp;
     } else {
+      if (task.size >= S) {
+        cache.pop();
+      }
       cache.unshift(task);
     }
   });
+  return cache;
 }
 
 console.log(solution(5, [1, 2, 3, 2, 6, 2, 3, 5, 7]));
