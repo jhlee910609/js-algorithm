@@ -4,36 +4,14 @@ function solution(S, tasks) {
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     const targetIdx = cache.indexOf(task);
-    console.log("============ task", task);
-    console.log("before", cache);
+    const startIdx = targetIdx > -1 ? targetIdx : S - 1;
 
-    if (cache.length < S) {
-      if (targetIdx > -1) {
-        for (let j = 0; j < targetIdx; j++) {
-          console.log(cache[j], cache[j + 1]);
-          cache[j + 1] = cache[j];
-        }
-        cache[0] = task;
-      } else {
-        cache.unshift(task);
-      }
-    } else {
-      if (targetIdx > -1) {
-        for (let j = 0; j < targetIdx; j++) {
-          cache[j + 1] = cache[j];
-        }
-        cache[0] = task;
-      } else {
-        for (let j = 0; j < S - 1; j++) {
-          cache[j + 1] = cache[j];
-        }
-        cache.pop();
-        cache.unshift(task);
-      }
+    // 포인트 1. 뒤부터 돈다. 그래야 맨앞을 정상적으로 비울 수  있음
+    for (let j = startIdx; j >= 1; j--) {
+      cache[j] = cache[j - 1];
     }
-    console.log("after", cache);
+    cache[0] = task;
   }
-
   return cache;
 }
 
