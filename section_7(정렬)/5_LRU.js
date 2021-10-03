@@ -4,9 +4,9 @@ function solution(S, tasks) {
   tasks.forEach((task) => {
     console.log("task", task);
     const targetIdx = cache.findIndex((x) => task === x);
-    console.log("targetIdx", targetIdx);
 
     if (targetIdx !== -1) {
+      console.log("targetIdx", targetIdx);
       const temp = cache[targetIdx];
 
       for (let j = 0; j < targetIdx; j++) {
@@ -14,6 +14,7 @@ function solution(S, tasks) {
       }
 
       cache[0] = temp;
+      console.log(cache);
     } else {
       if (task.size >= S) {
         cache.pop();
