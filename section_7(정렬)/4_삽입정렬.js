@@ -8,8 +8,10 @@ function solution(input) {
     for (j = i - 1; j >= 0; j--) {
       if (input[j] > temp) {
         // input 덮는 건 무시해도 된다.
+        // temp에 할당
         input[j + 1] = input[j];
       } else {
+        // temp > input[j] 면
         break;
       }
     }
