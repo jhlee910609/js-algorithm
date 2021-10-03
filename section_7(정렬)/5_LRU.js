@@ -1,16 +1,32 @@
 function solution(S, tasks) {
-  const cache = [];
+  const cache = Array.from({ length: S });
 
-  const rearrange = (targetIdx) => {};
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    const targetIdx = cache.indexOf(task);
 
-  tasks.forEach((task) => {
-    const targetIdx = cache.findIndex((x) => task === x);
-    const idx = targetIdx > -1 ? targetIdx : cache.length - 1;
-
-    for (let i = 0; i < idx; i++) {
-      cache[i + 1] = cache[i];
+    if (cache.length === S) {
+      if (targetIdx > -1) {
+        for (let j = 0; j < targetIdx; j++) {
+          cache[j + 1] = cache[j];
+        }
+      } else {
+        for (let j = 0; j < cache.length - 1; j++) {
+          cache[j + 1] = cache[j];
+        }
+      }
+      cache[0] = task;
+    } else {
+      if (targetIdx > -1) {
+        for (let j = 0; j < targetIdx; j++) {
+          cache[j + 1] = cache[j];
+        }
+        cache[0] = task;
+      } else {
+        cache.unshift(task);
+      }
     }
-  });
+  }
 
   return cache;
 }
