@@ -1,13 +1,14 @@
 function solution(S, tasks) {
-  const cache = Array.from({ length: S });
+  const cache = [];
 
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     const targetIdx = cache.indexOf(task);
+    console.log(task, targetIdx);
 
     if (cache.length === S) {
       if (targetIdx > -1) {
-        for (let j = 0; j < targetIdx; j++) {
+        for (let j = 0; j < targetIdx - 1; j++) {
           cache[j + 1] = cache[j];
         }
       } else {
@@ -26,6 +27,7 @@ function solution(S, tasks) {
         cache.unshift(task);
       }
     }
+    console.log(cache);
   }
 
   return cache;
