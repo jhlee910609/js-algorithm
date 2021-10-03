@@ -1,10 +1,13 @@
 function solution(input) {
   for (let i = 0; i < input.length; i++) {
+    // 1. 옮겨야할 원소 및 옮길 idx 초기화
     let temp = input[i],
       j;
 
+    // i바로 앞 idx부터 루프 시작
     for (j = i - 1; j >= 0; j--) {
       if (input[j] > temp) {
+        // input 덮는 건 무시해도 된다.
         input[j + 1] = input[j];
       } else {
         break;
