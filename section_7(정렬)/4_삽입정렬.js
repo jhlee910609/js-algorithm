@@ -10,7 +10,6 @@ function solution(input) {
         // input 덮는 건 무시해도 된다.
         input[j + 1] = input[j];
       } else {
-        console.log("11", input);
         break;
       }
     }
