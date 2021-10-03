@@ -12,6 +12,19 @@ function solution(input) {
   return input;
 }
 
+function solution2(input) {
+  for (let i = 0; i < input.length - 1; i++) {
+    //i 는 최소값
+    for (let j = i; j < input.length; j++) {
+      if (input[i] > input[j]) {
+        [input[i], input[j]] = [input[j], input[i]];
+      }
+    }
+  }
+  return input;
+}
+
 const result = [13, 5, 345, 5, 38, 854, 243, 1, 42, 67].sort((a, b) => a - b);
 console.log(result);
 console.log(solution([13, 5, 345, 5, 38, 854, 243, 1, 42, 67]));
+console.log(solution2([13, 5, 345, 5, 38, 854, 243, 1, 42, 67]));
