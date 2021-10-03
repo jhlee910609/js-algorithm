@@ -1,27 +1,17 @@
 function solution(S, tasks) {
   const cache = [];
 
+  const rearrange = (targetIdx) => {};
+
   tasks.forEach((task) => {
-    console.log("task", task);
     const targetIdx = cache.findIndex((x) => task === x);
+    const idx = targetIdx > -1 ? targetIdx : cache.length - 1;
 
-    if (targetIdx !== -1) {
-      console.log("targetIdx", targetIdx);
-      const temp = cache[targetIdx];
-
-      for (let j = 0; j < targetIdx; j++) {
-        cache[j + 1] = cache[j];
-      }
-
-      cache[0] = temp;
-      console.log(cache);
-    } else {
-      if (task.size >= S) {
-        cache.pop();
-      }
-      cache.unshift(task);
+    for (let i = 0; i < idx; i++) {
+      cache[i + 1] = cache[i];
     }
   });
+
   return cache;
 }
 
