@@ -5,6 +5,9 @@ function solution(S, tasks) {
   tasks.forEac((task, i) => {
     console.log("task", task);
     if (cache.includes(task)) {
+      for (let i = 1; i < tasks.length - 1; i++) {}
+    } else {
+      cache.unshift(task);
     }
   });
 }
