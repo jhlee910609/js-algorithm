@@ -4,19 +4,19 @@ function solution(S, tasks) {
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     const targetIdx = cache.indexOf(task);
-    console.log(task, targetIdx);
+    console.log("============ task", task);
+    console.log("before", cache);
 
-    if (cache.length === S) {
+    if (cache.length < S) {
       if (targetIdx > -1) {
-        for (let j = 0; j < targetIdx - 1; j++) {
+        for (let j = 0; j < targetIdx; j++) {
+          console.log(cache[j], cache[j + 1]);
           cache[j + 1] = cache[j];
         }
+        cache[0] = task;
       } else {
-        for (let j = 0; j < cache.length - 1; j++) {
-          cache[j + 1] = cache[j];
-        }
+        cache.unshift(task);
       }
-      cache[0] = task;
     } else {
       if (targetIdx > -1) {
         for (let j = 0; j < targetIdx; j++) {
@@ -24,10 +24,14 @@ function solution(S, tasks) {
         }
         cache[0] = task;
       } else {
+        for (let j = 0; j < S - 1; j++) {
+          cache[j + 1] = cache[j];
+        }
+        cache.pop();
         cache.unshift(task);
       }
     }
-    console.log(cache);
+    console.log("after", cache);
   }
 
   return cache;
