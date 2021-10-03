@@ -1,14 +1,16 @@
 function solution(input) {
-  for (let i = 1; i < input.length; i++) {
-    let minIdx = i;
-    console.log("=====", input[i]);
-    for (let j = 0; j < i; j++) {
-      console.log(input[j]);
-      if (input[j] < input[minIdx]) {
-        minIdx = j;
+  for (let i = 0; i < input.length; i++) {
+    let temp = input[i],
+      j;
+
+    for (j = i - 1; j >= 0; j--) {
+      if (input[j] > temp) {
+        input[j + 1] = input[j];
+      } else {
+        break;
       }
     }
-    [input[i], input[minIdx]] = [input[minIdx], input[i]];
+    input[j + 1] = temp;
   }
   return input;
 }
