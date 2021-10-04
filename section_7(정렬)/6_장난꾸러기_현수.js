@@ -1,17 +1,12 @@
 function solution(input) {
   let ans = [];
+  const res = [...input].sort((a, b) => a - b);
 
-  for (let i = 0; i < input.length; i++) {
-    const temp = input[i];
-    if (
-      !(
-        temp >= (input[i - 1] || 0) &&
-        temp <= (input[i + 1] || Number.MAX_SAFE_INTEGER)
-      )
-    ) {
-      ans.push(input[i]);
+  input.forEach((v, i) => {
+    if (v !== res[i]) {
+      ans.push(i + 1);
     }
-  }
+  });
 
   return ans.join(" ");
 }
