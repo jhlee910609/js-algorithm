@@ -2,17 +2,10 @@ function solution(S, tasks) {
   const cache = Array.from({ length: S }).map((v, i) => 0);
   tasks.forEach((task) => {
     const cachedIdx = cache.indexOf(task);
+    const len = cachedIdx > -1 ? cachedIdx : cache.length - 1;
 
-    // 1. cache hit
-    if (cachedIdx > -1) {
-      for (let i = cachedIdx - 1; i > 0; i--) {
-        cache[i] = cache[i - 1];
-      }
-    } else {
-      // 2. cache miss
-      for (let i = tasks.length - 1; i > 0; i--) {
-        cache[i] = cache[i - 1];
-      }
+    for (let i = len; i > 0; i--) {
+      cache[i] = cache[i - 1];
     }
     cache[0] = task;
   });
