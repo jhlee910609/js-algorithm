@@ -1,7 +1,8 @@
 function solution(timeTable) {
   let ans = 1;
+  // 1. 이차원배열 정렬할 때, 보통 아래 로직과 같이 짠다.
   timeTable.sort((a, b) => {
-    return a[1] - b[1];
+    if (a[1]) return a[1] - b[1];
   });
 
   let cur = timeTable[0];
