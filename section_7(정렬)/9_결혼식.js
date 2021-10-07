@@ -1,18 +1,29 @@
 function solution(input) {
-  let ans = 0;
   const temp = [];
+  let ans = 0;
 
   for (let x of input) {
     temp.push([x[0], "s"]);
     temp.push([x[1], "e"]);
   }
-  console.log(temp);
 
   temp.sort((a, b) => {
     if (a[0] === b[0]) {
-      return a[1] - b[1];
+      return a[1].charCodeAt() - b[1].charCodeAt();
     }
     return a[0] - b[0];
+  });
+
+  let cnt = 0;
+
+  temp.forEach((a) => {
+    console.log(a);
+    if (a[0] === "s") {
+      cnt++;
+    } else {
+      cnt--;
+    }
+    ans = Math.max(cnt, ans);
   });
 
   return ans;
