@@ -1,14 +1,19 @@
 function solution(input) {
   let ans = 0;
+  const temp = [];
 
-  input.sort((a, b) => {
+  for (let x of input) {
+    temp.push([x[0], "s"]);
+    temp.push([x[1], "e"]);
+  }
+  console.log(temp);
+
+  temp.sort((a, b) => {
     if (a[0] === b[0]) {
       return a[1] - b[1];
     }
     return a[0] - b[0];
   });
-
-  console.log(input);
 
   return ans;
 }
