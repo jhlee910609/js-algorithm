@@ -1,4 +1,8 @@
-function solution(input) {}
+function solution(input) {
+  let ans = 0;
+
+  return ans;
+}
 
 console.log(
   solution([
