@@ -18,7 +18,7 @@ function solution(input) {
 
   temp.forEach((a) => {
     console.log(a);
-    if (a[0] === "s") {
+    if (a[1] === "s") {
       cnt++;
     } else {
       cnt--;
