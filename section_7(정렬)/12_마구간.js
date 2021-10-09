@@ -22,18 +22,14 @@ function solution(input, M) {
   // 2분 검색 종료 조건
   while (lt <= rt) {
     let distance = parseInt((lt + rt) / 2); // mid 거리
-    if (count(input, distance) === M) {
+    if (count(input, distance) >= M) {
       ans = distance;
-      break;
+      lt = distance + 1;
     } else {
-      if (count(input, distance) < M) {
-        rt = distance - 1;
-      } else {
-        lt = distance + 1;
-      }
+      rt = distance - 1;
     }
   }
   return ans;
 }
 
-console.log(solution([1, 2, 8, 4, 9], 3));
+console.log(solution([1, 2, 8, 4, 9], 3) === 3);
