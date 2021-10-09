@@ -5,7 +5,7 @@ function solution(input, M) {
   if (!input || !input.length) return;
 
   const count = (songs, capacity) => {
-    let cnt = 1; // 무조건 1장은 있음
+    let cnt = 1; // 최소 1장은 만듬
     let sum = 0;
 
     for (let i = 0; i < songs.length; i++) {
