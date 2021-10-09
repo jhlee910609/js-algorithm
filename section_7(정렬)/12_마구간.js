@@ -1,7 +1,11 @@
 function solution(input) {
   input = input.sort((a, b) => a - b);
 
-  function count(input, minDistance) {}
+  function count(input, minDistance) {
+    let cnt = 1;
+    let endPoint = 0;
+    for (let i = 0; i < input.length; i++) {}
+  }
 
   let lt = 1;
   let rt = input[input.length - 1];
