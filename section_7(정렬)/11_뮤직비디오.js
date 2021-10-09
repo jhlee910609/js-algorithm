@@ -4,37 +4,36 @@
 function solution(input, M) {
   if (!input || !input.length) return;
 
+  const count = (songs, capacity) => {
+    let cnt = 1; // 무조건 1장은 있음
+    let sum = 0;
+
+    for (let i = 0; i < songs.length; i++) {
+      if (sum + songs[i] > capacity) {
+        cnt++;
+        sum = songs[i];
+      } else {
+        sum += songs[i];
+      }
+    }
+    return cnt;
+  };
+
   let lt = Math.max(...input);
   let rt = input.reduce((prev, cur) => prev + cur, 0);
-  let mid;
+  let ans;
 
-  while (lt < rt && rt > lt) {
-    mid = parseInt((lt + rt) / 2);
-    let cnt = 0;
-    let temp = 0;
-
-    for (let i = 0; i < input.length; i++) {
-      temp += input[i];
-      if (temp >= mid) {
-        cnt++;
-        temp = input[i];
-      }
-    }
-
-    if (cnt === M) {
-      console.log(mid);
-      break;
+  while (lt <= rt) {
+    const mid = parseInt((lt + rt) / 2);
+    if (count(input, mid) <= M) {
+      ans = mid;
+      rt = mid - 1;
     } else {
-      if (cnt < M) {
-        rt = mid - 1;
-      } else {
-        lt = mid + 1;
-      }
-      cnt = 0;
-      temp = 0;
+      lt = mid + 1;
     }
   }
-  return mid;
+  console.log(ans);
+  return ans;
 }
 
 console.log(solution([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) === 17);

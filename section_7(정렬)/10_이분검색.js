@@ -9,7 +9,7 @@ function solution(input, M) {
   let rt = input.length - 1;
   let ans;
 
-  while (lt < rt && rt > lt) {
+  while (lt <= rt) {
     const mid = parseInt((lt + rt) / 2);
     if (input[mid] === M) {
       ans = mid + 1; // 몇 번째 인지
