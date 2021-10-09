@@ -3,8 +3,8 @@ function solution(input, M) {
   let lt = 0;
   let rt = input.length - 1;
 
-  while (lt <= input.length - 1 && rt >= 0) {
-    const mid = Math.floor((lt + rt) / 2);
+  while (lt < rt && rt > lt) {
+    const mid = parseInt((lt + rt) / 2);
     if (input[mid] === M) {
       return mid;
     } else {
