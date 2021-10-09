@@ -7,6 +7,7 @@ function solution(input, M) {
 
     for (let i = 1; i < input.length; i++) {
       // 딱 떨어지지 않을 수 있음
+      // 최소 거리보다 크거나 같으면 해당 마구간에 말 둘 수 있음
       if (input[i] - endPoint >= minDistance) {
         endPoint = input[i];
         cnt++;
@@ -22,8 +23,10 @@ function solution(input, M) {
   // 2분 검색 종료 조건
   while (lt <= rt) {
     let distance = parseInt((lt + rt) / 2); // mid 거리
+    // 세우고자 하는 말 수보다 크거나 같으면 답 될 수 있음
     if (count(input, distance) >= M) {
       ans = distance;
+      // 최소를 구하는 것이기 때문에 답의 범위를 좁힘
       lt = distance + 1;
     } else {
       rt = distance - 1;
