@@ -1,10 +1,13 @@
 function solution(N) {
   const origin = Array.from({ length: N }).map((v, i) => i + 1);
-  function combination(arr) {
-    if (!arr.length) return;
+  let res = [];
+
+  function combination(v, temp) {
+    console.log(res);
+    if (v > 3) return temp;
     else {
-      console.log(arr);
-      combination(arr.slice(1));
+      combination(v * 2);
+      combination(v * 2 + 1);
     }
   }
 
