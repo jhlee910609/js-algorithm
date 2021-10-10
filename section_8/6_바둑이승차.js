@@ -9,6 +9,7 @@ function solution(C, dogs) {
         if (flags[i]) {
           temp += dogs[i];
         }
+
         if (temp <= C) {
           max = Math.max(temp, max);
         }
