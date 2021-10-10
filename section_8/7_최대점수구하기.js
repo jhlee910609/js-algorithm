@@ -1,16 +1,16 @@
 function solution(input, limitTime) {
   let maxScore = -1; // 최대 점수
-  console.log(input, limitTime);
 
-  function dfs(L, time) {
+  function dfs(L, time = 0, totalScore = 0) {
     if (time > limitTime) {
       return;
     }
 
     if (L === input.length) {
+      maxScore = Math.max(maxScore, totalScore);
     } else {
-      dfs(L + 1, time + input[L][1]);
-      dfs(L + 1, time);
+      dfs(L + 1, time + input[L][1], totalScore + input[L][0]);
+      dfs(L + 1, time, totalScore);
     }
   }
 
