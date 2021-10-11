@@ -4,13 +4,14 @@ function solution(n, m) {
   let answer = [];
   let tmp = Array.from({ length: m }, () => 0);
   function DFS(L) {
+    console.log(L, tmp);
     if (L === m) {
-      console.log(tmp);
       answer.push(tmp.slice());
     } else {
       for (let i = 1; i <= n; i++) {
-        tmp[L] = i;
-        DFS(L + 1);
+        tmp[L] = i; // tmp[0] = 1
+        DFS(L + 1); // tmp[1] = 1
+        // tmp[2] = 1
       }
     }
   }
