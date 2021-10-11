@@ -1,20 +1,21 @@
 // 모든 순열 구함
 
-function solution(N, M) {
-  let res = [];
-  function dfs(L, arr) {
-    if (L === N + 1) return;
-    if (arr.length === M) {
-      res.push(arr);
-      return;
+function solution(n, m) {
+  let answer = [];
+  let tmp = Array.from({ length: m }, () => 0);
+  function DFS(L) {
+    if (L === m) {
+      answer.push(tmp.slice());
     } else {
-      dfs(L + 1, arr);
-      dfs(L + 1, arr.concat(L));
+      for (let i = 1; i <= n; i++) {
+        tmp[L] = i;
+        DFS(L + 1);
+      }
     }
   }
 
-  dfs(1, []);
-  return res;
+  DFS(0);
+  return answer;
 }
 
 console.log(solution(3, 2));
