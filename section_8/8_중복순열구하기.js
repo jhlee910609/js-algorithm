@@ -5,6 +5,7 @@ function solution(n, m) {
   let tmp = Array.from({ length: m }, () => 0);
   function DFS(L) {
     if (L === m) {
+      console.log(tmp);
       answer.push(tmp.slice());
     } else {
       for (let i = 1; i <= n; i++) {
