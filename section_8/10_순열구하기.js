@@ -8,12 +8,10 @@ function solution(arr, M) {
       ans.push([...temp]);
     } else {
       for (let i = 0; i < arr.length; i++) {
-        if (ch[i] === false) {
-          ch[i] = true;
-          temp[L] = arr[i];
-          dfs(L + 1);
-          ch[i] = false;
-        }
+        ch[i] = true;
+        temp[L] = arr[i];
+        dfs(L + 1);
+        ch[i] = false;
       }
     }
   }
