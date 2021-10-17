@@ -1,22 +1,23 @@
 function solution(arr, M) {
   let ans = [];
   const ch = Array.from({ length: arr.length }).map(() => false);
+  let temp = Array.from({ length: M }, () => 0);
 
-  function dfs(L, res, temp) {
+  function dfs(L) {
     if (L === M) {
-      ans.push(res);
-      return;
+      ans.push([...temp]);
     } else {
-      for (let i = 0; i < temp.length; i++) {
-        dfs(
-          L + 1,
-          [...res, temp[i]],
-          [...temp.slice(0, i), ...temp.slice(i + 1)]
-        );
+      for (let i = 0; i < arr.length; i++) {
+        if (ch[i] === false) {
+          ch[i] = true;
+          temp[L] = arr[i];
+          dfs(L + 1);
+          ch[i] = false;
+        }
       }
     }
   }
-  dfs(0, [], arr);
+  dfs(0);
   return ans;
 }
 
