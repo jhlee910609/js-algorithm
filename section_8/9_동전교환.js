@@ -2,21 +2,19 @@
 
 function solution(N, M) {
   N.sort((a, b) => b - a);
-  console.log(N);
-  let ans;
+  let ans = 0;
 
   function dfs(total) {
-    if (total === 0) {
+    if (total === 0 || !N.length) {
       return;
     } else {
       const coin = N.shift();
-      ans += Math.floor(M / coin);
-      console.log(ans % coin);
-      dfs(ans % coin);
+      ans += Math.floor(total / coin);
+      dfs(total % coin);
     }
   }
   dfs(M);
   return ans;
 }
 
-console.log(solution([1, 2, 5], 15) === 15);
+console.log(solution([1, 2, 5], 15) === 3);
