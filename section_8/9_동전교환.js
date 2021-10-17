@@ -17,4 +17,4 @@ function solution(N, M) {
   return ans;
 }
 
-console.log(solution([1, 2, 5], 15) === 3);
+console.log(solution([1, 2, 5], 17));
