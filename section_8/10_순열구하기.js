@@ -1,21 +1,25 @@
 function solution(arr, M) {
   let ans = [];
 
-  function dfs(L, res) {
+  function dfs(L, res, temp) {
     if (L === M) {
       ans.push(res);
       return;
     } else {
-      if (L === 0) {
-        for (let i = 0; arr.length; i++) {
-          dfs(L + 1, [...res, arr[i]]);
-        }
-      } else {
-        dfs(L + 1, [...res, arr[i]]);
+      for (let i = 0; temp.length; i++) {
+        dfs(
+          L + 1,
+          [...res, temp[i]],
+          [...temp.slice(0, i), ...temp.slice(i + 1)]
+        );
+        console.log("L", L, "res", res, "temp", [
+          ...temp.slice(0, i),
+          ...temp.slice(i + 1),
+        ]);
       }
     }
   }
-  dfs(0, []);
+  dfs(0, [], arr);
   return ans;
 }
 
