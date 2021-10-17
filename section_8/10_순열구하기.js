@@ -2,15 +2,11 @@ function solution(arr, M) {
   let ans = [];
 
   function dfs(L, res, temp) {
-    if (L === 1) {
+    if (L === M) {
       ans.push(res);
       return;
     } else {
-      for (let i = 0; temp.length; i++) {
-          console.log("L", L, "res", res, "temp", [
-            ...temp.slice(0, i),
-            ...temp.slice(i + 1),
-          ]);
+      for (let i = 0; i < temp.length; i++) {
         dfs(
           L + 1,
           [...res, temp[i]],
