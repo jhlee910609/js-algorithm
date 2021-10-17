@@ -1,5 +1,6 @@
 function solution(arr, M) {
   let ans = [];
+  const ch = Array.from({ length: arr.length }).map(() => false);
 
   function dfs(L, res, temp) {
     if (L === M) {
