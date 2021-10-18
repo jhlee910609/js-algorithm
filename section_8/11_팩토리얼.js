@@ -1,6 +1,6 @@
 function solution(N) {
   function dfs(M) {
-    if (M < 1) {
+    if (M === 1) {
       return 1;
     } else {
       return M * dfs(M - 1);
