@@ -5,9 +5,13 @@ function solution(arr, K, M) {
     if (L === K) {
       if (sum % M === 0) {
         count++;
+      } else {
+        dfs();
       }
     }
   }
+
+  dfs(0, 0);
 
   return count;
 }
