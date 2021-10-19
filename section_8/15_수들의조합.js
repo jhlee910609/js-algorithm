@@ -2,7 +2,6 @@ function solution(arr, K, M) {
   if (!arr) return 0;
 
   let count = 0;
-  let ch = Array.from({ length: arr.length }).fill(false);
 
   function dfs(L, sum, s) {
     if (L === K) {
@@ -11,11 +10,7 @@ function solution(arr, K, M) {
       }
     } else {
       for (let i = s; i < arr.length; i++) {
-        if (!ch[i]) {
-          ch[i] = 1;
-          dfs(L + 1, sum + arr[i], i);
-          ch[i] = 0;
-        }
+        dfs(L + 1, sum + arr[i], i + 1);
       }
     }
   }
