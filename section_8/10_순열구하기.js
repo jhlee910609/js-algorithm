@@ -7,11 +7,14 @@ function solution(arr, M) {
     if (L === M) {
       ans.push([...temp]);
     } else {
+      // 순열 (순서 다르면 다른 조합임)
       for (let i = 0; i < arr.length; i++) {
-        ch[i] = true;
-        temp[L] = arr[i];
-        dfs(L + 1);
-        ch[i] = false;
+        if (!ch[i]) {
+          ch[i] = true;
+          temp[L] = arr[i];
+          dfs(L + 1);
+          ch[i] = false;
+        }
       }
     }
   }
