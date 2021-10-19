@@ -25,7 +25,7 @@ function solution(arr, K, M) {
   }
 
   dfs(0, 0);
-  console.log(res);
+  console.log(res.sort((a, b) => a - b));
   return count;
 }
 
