@@ -4,6 +4,7 @@ function solution(n, arr) {
   const ch = Array.from({ length: n + 1 }).fill(0);
 
   // 1. 방향 그래프 만들어 둔다.
+  // 무방향 그래프는 graph[b][a] = 1도 해줘야 한다
   for (let [a, b] of arr) {
     graph[a][b] = 1;
   }
