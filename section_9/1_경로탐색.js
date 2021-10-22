@@ -1,7 +1,8 @@
 function solution(n, arr) {
   let count = 0;
   const graph = Array.from(Array(n + 1), () => Array(n + 1).fill(0));
-  const ch = Array.from({ length: n + 1 }).fill(0);
+  const ch = Array.from({ length: n + 1 }, () => 0);
+  let path = [];
 
   // 1. 방향 그래프 만들어 둔다.
   // 무방향 그래프는 graph[b][a] = 1도 해줘야 한다
@@ -12,17 +13,21 @@ function solution(n, arr) {
   function DFS(v) {
     if (v === n) {
       count++;
+      console.log(path);
     } else {
       for (let i = 1; i <= n; i++) {
         if (graph[v][i] === 1 && ch[i] === 0) {
           ch[i] = 1;
+          path.push(i);
           DFS(i);
           ch[i] = 0;
+          path.pop();
         }
       }
     }
   }
 
+  path.push(1);
   DFS(1);
   return count;
 }
