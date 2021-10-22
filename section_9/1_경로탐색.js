@@ -28,6 +28,9 @@ function solution(n, arr) {
   }
 
   path.push(1);
+  ch[1] = 1;
+  // 1부터 무조건 시작이니
+  // index 1을 무조건 방문한 걸로 시작한다.
   DFS(1);
   return count;
 }
@@ -37,6 +40,7 @@ const arr = [
   [1, 3],
   [1, 4],
   [2, 1],
+  [2, 3],
   [2, 5],
   [3, 4],
   [4, 2],
