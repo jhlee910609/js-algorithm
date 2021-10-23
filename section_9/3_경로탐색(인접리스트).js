@@ -1,3 +1,6 @@
+/**
+ * 인접 행렬과 다른 점은 자기가 갈 수 있는 노드들을 배열로 들고 있는다.
+ */
 function solution(n, arr) {
   let count = 0;
   const graph = Array.from(Array(n + 1), () => []);
