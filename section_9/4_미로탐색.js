@@ -13,7 +13,9 @@ function solution(arr) {
       ans++;
     } else {
       for (let i = 0; i < dx.length; i++) {
-        console.log(x, y);
+        console.log("x", x, "y", y);
+        console.log("dx", dx[i], "dy", dy[i]);
+        console.log("dx + x", x + dx[i], "dy + y", y + dy[i]);
         dsf(x + dx[i], y + dy[i]);
       }
     }
