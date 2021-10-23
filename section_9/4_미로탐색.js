@@ -9,8 +9,6 @@ function solution(arr) {
     if (x < 0 || y < 0) return;
     if (arr[x][y] === 1) return;
 
-    console.log(x, y);
-
     if (x === 6 && y === 6) {
       ans++;
     } else {
