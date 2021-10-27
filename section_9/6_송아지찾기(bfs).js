@@ -20,8 +20,8 @@ function solution(s, e) {
       }
 
       if (!visited.includes(nv)) {
+        visited[nv] = 1;
         q.push(nv);
-        visited.push(nv);
         dis[nv] = dis[v] + 1;
       }
     }
