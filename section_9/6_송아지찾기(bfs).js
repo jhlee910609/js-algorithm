@@ -21,7 +21,7 @@ function solution(s, e) {
         return dis[v] + 1;
       }
 
-      if (!visited.includes(nv)) {
+      if (!visited[nv]) {
         visited[nv] = 1;
         q.push(nv);
         dis[nv] = dis[v] + 1;
