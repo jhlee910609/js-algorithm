@@ -9,6 +9,7 @@ function solution(s, e) {
 
   const dis = Array.from({ length: 10001 }, () => 0); // 트리의 lv를 담는다
   dis[s] = 0;
+  let L = 0;
 
   while (q.length) {
     const v = q.shift();
@@ -16,6 +17,7 @@ function solution(s, e) {
     for (let nv of [v - 1, v + 1, v + 5]) {
       if (nv === e) {
         // 부모 + 1;
+        console.log(L + 1);
         return dis[v] + 1;
       }
 
@@ -25,6 +27,7 @@ function solution(s, e) {
         dis[nv] = dis[v] + 1;
       }
     }
+    L++;
   }
   return ans;
 }
