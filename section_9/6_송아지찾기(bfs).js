@@ -4,19 +4,21 @@ function solution(s, e) {
 
   let ans = 0;
   const q = [s];
+  const ch = [e];
 
   while (q.length) {
     const v = q.shift();
 
-    if (v === e) {
-      console.log(ans);
-      return ans;
-    }
+    for (let nv of [v - 1, v + 1, v + 5]) {
+      if (nv === e) {
+        return;
+      }
 
-    q.push(v - 1);
-    q.push(v + 1);
-    q.push(v + 5);
-    ans++;
+      if (ch.includes(nv)) {
+        q.push(nv);
+        ch.push(nv);
+      }
+    }
   }
   return ans;
 }
