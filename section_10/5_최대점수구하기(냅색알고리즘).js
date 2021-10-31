@@ -1,5 +1,11 @@
+/**
+ * 냅색 알고리즘
+ * 1. 주어진 제한조건을 dynamic table로 표현한다.
+ *
+ */
 function solution(q) {
   console.log(q);
+  const dy = Array.from({ length: q.length + 1 }, () => 0);
 }
 
 console.log(
