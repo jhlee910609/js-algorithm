@@ -4,7 +4,7 @@
  * 1.1. dynamic table은 더 나은 값으로 갱신한다.
  */
 function solution(arr, m) {
-  const dy = Array.from({ length: arr.length + 1 }, () => 0);
+  const dy = Array.from({ length: m + 1 }, () => 0);
 
   for (let i = 0; i < arr.length; i++) {
     let ps = arr[i][0]; // 점수
@@ -15,8 +15,6 @@ function solution(arr, m) {
       dy[j] = Math.max(dy[j], dy[j - pt] + ps);
     }
   }
-
-  console.log(dy);
   return dy[m];
 }
 
