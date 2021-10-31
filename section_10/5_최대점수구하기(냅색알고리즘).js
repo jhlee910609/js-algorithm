@@ -1,4 +1,6 @@
-function solution() {}
+function solution(q) {
+  console.log(q);
+}
 
 console.log(
   solution([
@@ -7,5 +9,5 @@ console.log(
     [15, 8],
     [6, 3],
     [7, 4],
-  ])
+  ]) === 41
 );
