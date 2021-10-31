@@ -1,6 +1,4 @@
 function solution(N) {
-  let ans = 0;
-  console.log(N);
   let temp = Array.from({ length: N + 2 }, () => 0);
   temp[1] = 1;
   temp[2] = 2;
