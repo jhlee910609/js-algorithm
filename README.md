@@ -1,1 +1,1 @@
-# js-algorithm
+# js algorithm 정복하기
