@@ -6,6 +6,8 @@
 function solution(q) {
   console.log(q);
   const dy = Array.from({ length: q.length + 1 }, () => 0);
+
+  // 중복을 피하기 위해 뒤에서부터 돈다.
 }
 
 console.log(
