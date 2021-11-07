@@ -14,10 +14,10 @@ var minSubArrayLen = function (target, nums) {
     console.log(l, r);
     sum += nums[r];
     console.log("sum:", sum);
-
     while (sum >= target) {
-      ans = Math.min(ans, r - l + 1);
-      sum -= nums[l++];
+      const len = r - l + 1; // sum === target인 배열의 길이
+      ans = Math.min(ans, len);
+      sum -= nums[l++]; // l을 한칸 앞으로 당긴다.
     }
     r++;
   }
