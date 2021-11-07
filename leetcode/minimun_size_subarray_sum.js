@@ -18,7 +18,7 @@ var minSubArrayLen = function (target, nums) {
         temp += nums[i];
       }
 
-      if (temp === target) {
+      if (temp >= target) {
         ans = Math.min(ans, len);
       }
       l++;
