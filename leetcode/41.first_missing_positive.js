@@ -1,6 +1,5 @@
 var firstMissingPositive = function (arr) {
   let i = 0;
-  console.log("origin:", arr);
   while (i < arr.length) {
     let corr = arr[i] - 1;
     if (arr[i] > 0 && arr[i] <= arr.length && arr[i] !== arr[corr]) {
@@ -16,10 +15,11 @@ var firstMissingPositive = function (arr) {
   }
   return arr.length + 1;
 };
+
 function swap(arr, a, b) {
   let t = arr[a];
   arr[a] = arr[b];
   arr[b] = t;
 }
 
-console.log(firstMissingPositive([3, 4, -1, 1]));
+console.log(firstMissingPositive([7, 8, 11, 12]));
