@@ -1,8 +1,16 @@
-function solution(input) {
-  const len = input.length / 2;
-  const set = new Set(input);
+function solution(nums) {
+  const max = nums.length / 2;
+  const set = new Set();
 
-  return Array(...set).length < len ? Array(...set).length : len;
+  let i = 0;
+
+  while (set.size < max && i < nums.length) {
+    if (nums[i]) {
+      set.add(nums[i]);
+    }
+    i++;
+  }
+  return set.size;
 }
 
-console.log(solution([3, 3, 3, 2, 2, 4]));
+console.log(solution([3, 3, 3, 2, 2, 2]) === 2);
