@@ -5,13 +5,14 @@
  */
 var minSubArrayLen = function (target, nums) {
   // sliding window + two pointer
-  let l = 0,
-    r = 0,
+  // 연속된 배열 찾는 것에만 사용가능하다.
+  let l = 0, // left pointer
+    r = 0, // right pointer
     sum = 0;
   let ans = Number.MAX_SAFE_INTEGER;
 
   while (r < nums.length) {
-    console.log(l, r);
+    console.log("l:", l, "r:", r);
     sum += nums[r];
     console.log("sum:", sum);
     while (sum >= target) {
