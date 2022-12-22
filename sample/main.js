@@ -35,7 +35,7 @@ window.onload = () => {
     if (isDragging) {
       setDragPosition({
         x: mouse.x - lastMouse.x < 0 ? mouse.x : lastMouse.x,
-        y: mouse.y - lastMouse.x < 0 ? mouse.y : lastMouse.y,
+        y: mouse.y - lastMouse.y < 0 ? mouse.y : lastMouse.y,
         w: Math.abs(mouse.x - lastMouse.x),
         h: Math.abs(mouse.y - lastMouse.y),
       });
