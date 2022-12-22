@@ -24,15 +24,16 @@ window.onload = () => {
 
   app.addEventListener("mousedown", (e) => {
     isDragging = true;
-    start.x = e.x;
-    start.y = e.y;
+    start.x = e.clientX;
+    start.y = e.clientY;
     setDragPosition(start);
   });
 
   app.addEventListener("mousemove", (e) => {
     if (!isDragging) return false;
-    end.x = e.x;
-    end.y = e.y;
+    end.x = e.clientX;
+    end.y = e.clientY;
+
     const abs = Math.abs;
     setDragPosition({
       ...start,
