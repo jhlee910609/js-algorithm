@@ -1,5 +1,5 @@
 window.onload = () => {
-  const app = document.body;
+  const canvas = document.body;
   const DRAGGING_ID = "dragging";
   const dragEle = findById(DRAGGING_ID);
 
@@ -22,27 +22,27 @@ window.onload = () => {
     setPosition(dragEle, rect);
   }
 
-  app.addEventListener("mousedown", (e) => {
+  canvas.addEventListener("mousedown", (e) => {
     lastMouse.x = e.clientX;
     lastMouse.y = e.clientY;
     isDragging = true;
   });
 
-  app.addEventListener("mousemove", (e) => {
+  canvas.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 
     if (isDragging) {
       setDragPosition({
-        x: lastMouse.x,
-        y: lastMouse.y,
+        x: mouse.x - lastMouse.x < 0 ? mouse.x : lastMouse.x,
+        y: mouse.y - lastMouse.x < 0 ? mouse.y : lastMouse.y,
         w: Math.abs(mouse.x - lastMouse.x),
         h: Math.abs(mouse.y - lastMouse.y),
       });
     }
   });
 
-  app.addEventListener("mouseup", (e) => {
+  canvas.addEventListener("mouseup", (e) => {
     isDragging = false;
   });
 };
