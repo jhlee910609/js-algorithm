@@ -23,9 +23,9 @@ window.onload = () => {
   }
 
   app.addEventListener("mousedown", (e) => {
-    isDragging = true;
     lastMouse.x = e.clientX;
     lastMouse.y = e.clientY;
+    isDragging = true;
   });
 
   app.addEventListener("mousemove", (e) => {
@@ -36,8 +36,8 @@ window.onload = () => {
       setDragPosition({
         x: lastMouse.x,
         y: lastMouse.y,
-        w: mouse.x - lastMouse.x,
-        h: mouse.y - lastMouse.y,
+        w: Math.abs(mouse.x - lastMouse.x),
+        h: Math.abs(mouse.y - lastMouse.y),
       });
     }
   });
