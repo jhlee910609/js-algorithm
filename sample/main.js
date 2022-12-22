@@ -31,13 +31,20 @@ window.onload = () => {
 
   app.addEventListener("mousemove", (e) => {
     if (!isDragging) return false;
-    const diffX = end.x - start.x;
-    const diffY = end.y - start.y;
 
-    console.log(diffX, diffY);
+    const diffX = e.clientX - start.x;
+    const diffY = e.clientY - start.y;
 
-    end.x = e.clientX;
-    end.y = e.clientY;
+    if (diffX < 0) {
+      start.x = e.clientX;
+    } else {
+      end.x = e.clientX;
+    }
+
+    if (diffY < 0) {
+    } else {
+      end.y = e.clientY;
+    }
 
     const abs = Math.abs;
     setDragPosition({
