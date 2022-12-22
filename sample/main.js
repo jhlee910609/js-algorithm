@@ -1,31 +1,50 @@
 window.onload = () => {
   const app = document.body;
-  let start = { x: 0, y: 0 };
-  let end = { x: 0, y: 0 };
+  const DRAGGING_ID = "dragging";
+  const dragEle = findById(DRAGGING_ID);
+
+  let start = { x: 0, y: 0, w: 0, h: 0 };
+  let end = { x: 0, y: 0, w: 0, h: 0 };
   let isDragging = false;
 
-  function makeRect(rect) {
-    const rectDiv = document.createElement("div");
-    rectDiv.style.x = rect.x + "px";
-    rectDiv.style.y = rect.y + "px";
-    return rectDiv;
+  function findById(id) {
+    return document.getElementById(id);
   }
+
+  function setPosition(ele, rect) {
+    ele.style.left = (rect.x || 0) + "px";
+    ele.style.top = (rect.y || 0) + "px";
+    ele.style.width = (rect.w || 0) + "px";
+    ele.style.height = (rect.h || 0) + "px";
+  }
+
+  function setDragPosition(rect) {
+    setPosition(dragEle, rect);
+  }
+
   app.addEventListener("mousedown", (e) => {
     isDragging = true;
     start.x = e.clientX;
     start.y = e.clientY;
-    app.appendChild(makeRect(start));
-  });
-  app.addEventListener("mouseup", (e) => {
-    isDragging = false;
-    start = {};
-    end = {};
+    setDragPosition(start);
   });
 
   app.addEventListener("mousemove", (e) => {
     if (!isDragging) return false;
     end.x = e.clientX;
     end.y = e.clientY;
-    console.log(end.x - start.x, end.y - start.y);
+    const abs = Math.abs;
+    setDragPosition({
+      ...start,
+      w: abs(end.x - start.x),
+      h: abs(end.y - start.y),
+    });
+  });
+
+  app.addEventListener("mouseup", (e) => {
+    isDragging = false;
+    start = {};
+    end = {};
+    setDragPosition(start);
   });
 };
