@@ -29,4 +29,5 @@ var isSameTree = function (p, q) {
     s2.push(rr.left);
     s2.push(rr.right);
   }
+  return true;
 };
