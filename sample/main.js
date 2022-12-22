@@ -11,8 +11,8 @@ function setPosition(ele, rect) {
 
 window.onload = () => {
   const canvas = document.body;
-  const DRAGGING_ID = "dragging";
-  const dragEle = findById(DRAGGING_ID);
+  const dragEle = findById("dragging");
+  const ADJUST_CURSOR_POS = 10;
 
   let mouse = { x: 0, y: 0 };
   let lastMouse = { x: 0, y: 0 };
@@ -25,6 +25,7 @@ window.onload = () => {
   canvas.addEventListener("mousedown", (e) => {
     lastMouse.x = e.clientX;
     lastMouse.y = e.clientY;
+    setDragPosition({});
     isDragging = true;
   });
 
@@ -32,12 +33,16 @@ window.onload = () => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
 
+    const distanceX = mouse.x - lastMouse.x;
+    const distanceY = mouse.y - lastMouse.y;
+    const abs = Math.abs;
+
     if (isDragging) {
       setDragPosition({
-        x: mouse.x - lastMouse.x < 0 ? mouse.x : lastMouse.x,
-        y: mouse.y - lastMouse.y < 0 ? mouse.y : lastMouse.y,
-        w: Math.abs(mouse.x - lastMouse.x),
-        h: Math.abs(mouse.y - lastMouse.y),
+        x: distanceX < 0 ? mouse.x : lastMouse.x,
+        y: distanceY < 0 ? mouse.y : lastMouse.y,
+        w: abs(distanceX) - ADJUST_CURSOR_POS,
+        h: abs(distanceY) - ADJUST_CURSOR_POS,
       });
     }
   });
