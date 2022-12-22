@@ -31,6 +31,7 @@ window.onload = () => {
 
   app.addEventListener("mousemove", (e) => {
     if (!isDragging) return false;
+    console.log(e);
     end.x = e.clientX;
     end.y = e.clientY;
     const abs = Math.abs;
