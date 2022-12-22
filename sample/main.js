@@ -36,12 +36,17 @@ window.onload = () => {
     const diffY = e.clientY - start.y;
 
     if (diffX < 0) {
+      const temp = start.x;
       start.x = e.clientX;
+      end.x = temp;
     } else {
       end.x = e.clientX;
     }
 
     if (diffY < 0) {
+      const temp = start.y;
+      start.y = e.clientY;
+      end.y = temp;
     } else {
       end.y = e.clientY;
     }
