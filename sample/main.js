@@ -31,6 +31,11 @@ window.onload = () => {
 
   app.addEventListener("mousemove", (e) => {
     if (!isDragging) return false;
+    const diffX = end.x - start.x;
+    const diffY = end.y - start.y;
+
+    console.log(diffX, diffY);
+
     end.x = e.clientX;
     end.y = e.clientY;
 
