@@ -1,3 +1,14 @@
+function findById(id) {
+  return document.getElementById(id);
+}
+
+function setPosition(ele, rect) {
+  ele.style.left = (rect.x || 0) + "px";
+  ele.style.top = (rect.y || 0) + "px";
+  ele.style.width = (rect.w || 0) + "px";
+  ele.style.height = (rect.h || 0) + "px";
+}
+
 window.onload = () => {
   const canvas = document.body;
   const DRAGGING_ID = "dragging";
@@ -6,17 +17,6 @@ window.onload = () => {
   let mouse = { x: 0, y: 0 };
   let lastMouse = { x: 0, y: 0 };
   let isDragging = false;
-
-  function findById(id) {
-    return document.getElementById(id);
-  }
-
-  function setPosition(ele, rect) {
-    ele.style.left = (rect.x || 0) + "px";
-    ele.style.top = (rect.y || 0) + "px";
-    ele.style.width = (rect.w || 0) + "px";
-    ele.style.height = (rect.h || 0) + "px";
-  }
 
   function setDragPosition(rect) {
     setPosition(dragEle, rect);
